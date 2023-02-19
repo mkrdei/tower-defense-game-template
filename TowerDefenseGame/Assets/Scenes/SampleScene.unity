@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1528
+  m_Name: pb_Mesh-1312
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -355,7 +355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1608
+  m_Name: pb_Mesh-1368
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -617,7 +617,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1348
+  m_Name: pb_Mesh-1252
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -781,7 +781,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1596
+  m_Name: pb_Mesh-1356
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -945,7 +945,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1400
+  m_Name: pb_Mesh-1280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1467,7 +1467,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1360
+  m_Name: pb_Mesh-1264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1715,7 +1715,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1416
+  m_Name: pb_Mesh-1296
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2839,14 +2839,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147f5db800619154b83e97b7eea457f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawnInterval: 2
+  enemySpawnInterval: 3
   spawnedEnemyDatas:
   - enemyPrefab: {fileID: 2014983149460893413, guid: 8b18815085c922a4386abe537761e8c4, type: 3}
     amount: 3
-  - enemyPrefab: {fileID: 2014983149460893413, guid: 8b18815085c922a4386abe537761e8c4, type: 3}
+  - enemyPrefab: {fileID: 2014983149460893413, guid: 3b1641985e54e5a4dac2cbf4ebbef8a4, type: 3}
     amount: 1
   - enemyPrefab: {fileID: 2014983149460893413, guid: 8b18815085c922a4386abe537761e8c4, type: 3}
     amount: 3
+  - enemyPrefab: {fileID: 2014983149460893413, guid: 3b1641985e54e5a4dac2cbf4ebbef8a4, type: 3}
+    amount: 2
   - enemyPrefab: {fileID: 2014983149460893413, guid: 8b18815085c922a4386abe537761e8c4, type: 3}
     amount: 7
 --- !u!43 &1927563215
@@ -3309,7 +3311,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1879239731227281529, guid: 96882e351842d7c4595cc469cf2391ec, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3931795910984624111, guid: 96882e351842d7c4595cc469cf2391ec, type: 3}
       propertyPath: m_Name
@@ -6117,7 +6119,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8447bc90854e73940840d4ea06f7627c, type: 2}
     - target: {fileID: 8954598907966005571, guid: 50e2bfbfd8fee00458128442fbc636ca, type: 3}
       propertyPath: m_LocalScale.x
-      value: 7
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8954598908294965583, guid: 50e2bfbfd8fee00458128442fbc636ca, type: 3}
       propertyPath: m_StaticEditorFlags

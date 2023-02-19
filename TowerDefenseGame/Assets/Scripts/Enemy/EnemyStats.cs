@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class EnemyStats : MonoBehaviour
 {
+    [SerializeField]
     private float health = 100;
+    [SerializeField]
+    private float speed = 5;
+    private NavMeshAgent navMeshAgent;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = speed;
     }
 
     // Update is called once per frame
