@@ -15,6 +15,6 @@ MonoBehaviour:
   menuPrefab: {fileID: 4610605303293841025, guid: 09271c5925ac00d4f938f7bc601a8d65, type: 3}
   menuItemPrefab: {fileID: 2973947845762185954, guid: cff06009e4b97344bbc9944b241131f4, type: 3}
   sprites:
-  - {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
-  - {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  - {fileID: 21300000, guid: 3086d66a563317b40a20a20da2c64ac0, type: 3}
+  - {fileID: 21300000, guid: 05c986dad07f32342a0a32b51175c073, type: 3}
+  - {fileID: 21300000, guid: 4dc2b57afc51be04095159428e0e339b, type: 3}
+  - {fileID: 21300000, guid: 8e489d84838006b4b94217143375b4ac, type: 3}

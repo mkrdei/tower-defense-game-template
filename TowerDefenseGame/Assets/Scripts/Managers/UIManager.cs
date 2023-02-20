@@ -5,10 +5,17 @@ namespace Managers
 {
     public class UIManager : MonoBehaviour
     {
+        public Transform uIRoot;
+        public static UIManager instance;
         // Start is called before the first frame update
         void Awake()
         {
-            new GameObject().name = "UIRoot";;
+            if (instance == null)
+                instance = this;
+            else if (instance != this)
+                Destroy(instance);
+            uIRoot = new GameObject().transform;
+            uIRoot.name = "UIRoot";
         }
 
         // Update is called once per frame

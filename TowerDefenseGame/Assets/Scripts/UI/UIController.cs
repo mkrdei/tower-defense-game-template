@@ -23,10 +23,7 @@ namespace UI
         void Awake() 
         {   
             onSelectMenuFunctions = GetComponent<OnSelectMenuFunctions>();
-            onSelectMenus = new GameObject[onSelectMenuProfiles.Length];
-            //onSelectMenuItemSprites = GetComponent<Tower
-            
-            
+            onSelectMenus = new GameObject[onSelectMenuProfiles.Length];            
             uILayer = LayerMask.GetMask("UI");
         }
         void Start()
@@ -34,7 +31,7 @@ namespace UI
             for (int onSelectMenuIndex = 0; onSelectMenuIndex < onSelectMenuProfiles.Length; onSelectMenuIndex++)
             {
                 {
-                    onSelectMenus[onSelectMenuIndex] = Instantiate(onSelectMenuProfiles[onSelectMenuIndex].menuPrefab);
+                    onSelectMenus[onSelectMenuIndex] = Instantiate(onSelectMenuProfiles[onSelectMenuIndex].menuPrefab, UIManager.instance.uIRoot);
                     onSelectMenus[onSelectMenuIndex].SetActive(false);
                     onSelectMenus[onSelectMenuIndex].name = onSelectMenuProfiles[onSelectMenuIndex].name;
                     CreateOnSelectMenuItems(onSelectMenuIndex, onSelectMenus[onSelectMenuIndex], onSelectMenuFunctions.functionGroups[onSelectMenuIndex]);

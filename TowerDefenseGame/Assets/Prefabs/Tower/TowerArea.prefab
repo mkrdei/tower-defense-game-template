@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 180114206170592155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75862c1133e682c4283571572da19eed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuOffset: {x: 0, y: 2.5, z: 0}
+  menuOffset: {x: 0, y: 0, z: 0}
   onSelectMenuProfiles:
   - {fileID: 11400000, guid: e2b44f48e911f6e4d9a3225062c2ef39, type: 2}
   - {fileID: 11400000, guid: a3713b866b67ef544927cbc7df800df4, type: 2}
@@ -114,8 +114,8 @@ MonoBehaviour:
   burstTowerFunctions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: baa10c94f8115084b94fb6a2c7a9d690, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseDamage
         m_Mode: 1
         m_Arguments:
@@ -128,8 +128,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: baa10c94f8115084b94fb6a2c7a9d690, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: DivideFireCooldown
         m_Mode: 1
         m_Arguments:
@@ -142,8 +142,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: baa10c94f8115084b94fb6a2c7a9d690, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseRange
         m_Mode: 1
         m_Arguments:
@@ -157,8 +157,8 @@ MonoBehaviour:
   sniperTowerFunctions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: fca4daae8eb62444796439667b6cc438, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseDamage
         m_Mode: 1
         m_Arguments:
@@ -171,8 +171,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: fca4daae8eb62444796439667b6cc438, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: DivideFireCooldown
         m_Mode: 1
         m_Arguments:
@@ -185,8 +185,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: fca4daae8eb62444796439667b6cc438, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseRange
         m_Mode: 1
         m_Arguments:
@@ -200,8 +200,8 @@ MonoBehaviour:
   bomberTowerFunctions:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: 52ff77442fb7d5c41a2922da99847b28, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseDamage
         m_Mode: 1
         m_Arguments:
@@ -214,8 +214,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: 52ff77442fb7d5c41a2922da99847b28, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: DivideFireCooldown
         m_Mode: 1
         m_Arguments:
@@ -228,8 +228,8 @@ MonoBehaviour:
         m_CallState: 2
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 951091582703171920, guid: 52ff77442fb7d5c41a2922da99847b28, type: 3}
-        m_TargetAssemblyTypeName: Tower, Assembly-CSharp
+      - m_Target: {fileID: 780840047452806014}
+        m_TargetAssemblyTypeName: TowerArea, Assembly-CSharp
         m_MethodName: IncreaseRange
         m_Mode: 1
         m_Arguments:

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7820431581718828076}
   - component: {fileID: 4962724760570201241}
   m_Layer: 0
-  m_Name: 10x10 Circle Road
+  m_Name: Circle Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

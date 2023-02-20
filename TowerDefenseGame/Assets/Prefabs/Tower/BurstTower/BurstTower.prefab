@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerProfile: {fileID: 11400000, guid: d6539376266f02145a005f0fce8b680d, type: 2}
   projectilePrefab: {fileID: 5168302310445830575, guid: fadfc5fd4f0460e4da661dd06bae012f, type: 3}
-  cooldown: 0.15
-  damage: 10
-  projectileSpeed: 20
-  range: 5
+  damage: 3
+  cooldown: 0.1
+  range: 4
+  projectileSpeed: 50
 --- !u!65 &3295445123810244601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137048804417835009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a97d5096812a01438863e2b92a14903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <target>k__BackingField: {fileID: 0}
 --- !u!1 &7264520810006760185
 GameObject:
   m_ObjectHideFlags: 0

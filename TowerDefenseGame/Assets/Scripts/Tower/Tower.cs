@@ -9,21 +9,25 @@ public class Tower : MonoBehaviour
     private GameObject projectilePrefab;
     private float cooldownTimestamp;
     [field: SerializeField]
-    public float cooldown;
-    [field: SerializeField]
     public float damage;
     [field: SerializeField]
-    public float projectileSpeed;
+    public float cooldown;
     [field: SerializeField]
     public float range;
+    [field: SerializeField]
+    public float projectileSpeed;
     private TargetDetector targetDetector;
     private Transform target;
     private Transform launcher;
+    private SphereCollider rangeCollider;
+
     // Start is called before the first frame update
     void Awake()
     {
         targetDetector = GetComponentInChildren<TargetDetector>();
         launcher = transform.Find("Launcher");
+        rangeCollider = transform.Find("Range").GetComponent<SphereCollider>();
+        rangeCollider.radius = range;
     }
     void Start()
     {
@@ -51,16 +55,5 @@ public class Tower : MonoBehaviour
             }
         }
     }
-    public void IncreaseDamage()
-    {
-        damage += towerProfile.damageIncreaseAmount;
-    }
-    public void DivideFireCooldown()
-    {
-        cooldown /= towerProfile.fireCooldownDivisionAmount;
-    }
-    public void IncreaseRange()
-    {
-        range += towerProfile.rangeIncreaseAmount;
-    }
+    
 }

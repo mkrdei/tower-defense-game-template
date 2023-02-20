@@ -29,6 +29,7 @@ public class TowerArea : MonoBehaviour
     {
         towerType = "NoTower";
         uIController = GetComponent<UIController>();
+        
         onSelectMenuFunctions = GetComponent<OnSelectMenuFunctions>();
         onSelectMenuFunctions.InitializeFunctions(noTowerFunctions, burstTowerFunctions, sniperTowerFunctions, bomberTowerFunctions);
     }
@@ -36,7 +37,6 @@ public class TowerArea : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
     private void OnEnable() 
     {
@@ -76,6 +76,23 @@ public class TowerArea : MonoBehaviour
                 uIController.DisplayOnSelectMenu(towerType);
             }
         }
-
+    }
+    public void IncreaseDamage()
+    {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+            tower.damage += tower.towerProfile.damageIncreaseAmount;
+    }
+    public void DivideFireCooldown()
+    {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+            tower.cooldown /= tower.towerProfile.fireCooldownDivisionAmount;
+    }
+    public void IncreaseRange()
+    {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+            tower.range += tower.towerProfile.rangeIncreaseAmount;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TargetDetector : MonoBehaviour
 {
-    [field: SerializeField]
     public Transform target {get; private set;}
     // Start is called before the first frame update
     void Start()

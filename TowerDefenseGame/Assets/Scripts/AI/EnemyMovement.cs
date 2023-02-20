@@ -13,12 +13,10 @@ namespace AI
         void Awake()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
-            baseEnd = GameObject.Find("BaseEnd").transform;
             
         }
         void Start()
         {
-            navMeshAgent.destination = baseEnd.position;
         }
 
         // Update is called once per frame

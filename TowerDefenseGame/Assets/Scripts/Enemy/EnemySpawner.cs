@@ -5,6 +5,8 @@ using System;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
+    private Transform baseDestination;
+    [SerializeField]
     float enemySpawnInterval;
     float enemySpawnTimestamp;
     [SerializeField]
@@ -32,7 +34,8 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < spawnedEnemyData.amount; i++)
         {
-            Instantiate(spawnedEnemyData.enemyPrefab, transform);
+            GameObject enemy = Instantiate(spawnedEnemyData.enemyPrefab, transform);
+            enemy.GetComponent<Enemy>().destination = baseDestination.position;
         }
     }
     [Serializable]

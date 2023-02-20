@@ -50,10 +50,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerProfile: {fileID: 11400000, guid: 96d299b9f88ec544187be8b614cbb9fd, type: 2}
   projectilePrefab: {fileID: 5168302310445830575, guid: 0b6fd684e1338ae4fa4492f53a304283, type: 3}
-  cooldown: 0.3
   damage: 15
-  projectileSpeed: 10
-  range: 10
+  cooldown: 0.5
+  range: 7.5
+  projectileSpeed: 50
 --- !u!65 &3295445123810244601
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65,8 +65,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 2}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &6137048804417835009
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137048804417835009}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.87, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a97d5096812a01438863e2b92a14903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <target>k__BackingField: {fileID: 0}
 --- !u!1 &7264520810006760185
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,8 +182,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8597337700901799598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 361077542235962287}
