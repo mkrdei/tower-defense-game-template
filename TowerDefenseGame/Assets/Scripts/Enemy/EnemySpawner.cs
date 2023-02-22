@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Managers;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
@@ -10,39 +11,65 @@ public class EnemySpawner : MonoBehaviour
     float enemySpawnInterval;
     float enemySpawnTimestamp;
     [SerializeField]
-    private List<SpawnedEnemyData> spawnedEnemyDatas;
-    private int spawnIndex;
+    private List<Waves> waves;
+    private int enemyGroupIndex;
+    private bool spawning;
+    private int waveNumber;
     // Start is called before the first frame update
     void Awake()
     {
-        spawnIndex = 0;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnIndex < spawnedEnemyDatas.Count)
-            if (Time.time >= enemySpawnTimestamp)
-                {
-                    enemySpawnTimestamp = Time.time + enemySpawnInterval;
-                    SpawnEnemy(spawnedEnemyDatas[spawnIndex]);
-                    spawnIndex++;
-                }
+        if (spawning)
+            if (enemyGroupIndex < waves[waveNumber].enemyGroups.Count)
+                if (Time.time >= enemySpawnTimestamp)
+                    {
+                        enemySpawnTimestamp = Time.time + enemySpawnInterval;
+                        SpawnWaveEnemyGroups();
+                    }
+    }
+    private void OnEnable() 
+    {
+        WaveManager.waveStartedEvent += StartSpawning;
+    }
+    private void OnDisable() 
+    {
+        
     }
     
-    private void SpawnEnemy(SpawnedEnemyData spawnedEnemyData)
+    private void SpawnWaveEnemyGroups()
     {
-        for (int i = 0; i < spawnedEnemyData.amount; i++)
+        for (int i = 0; i < waves[waveNumber].enemyGroups[enemyGroupIndex].amount; i++)
         {
-            GameObject enemy = Instantiate(spawnedEnemyData.enemyPrefab, transform);
+            GameObject enemy = Instantiate(waves[waveNumber].enemyGroups[enemyGroupIndex].enemyPrefab, transform);
             enemy.GetComponent<Enemy>().destination = baseDestination.position;
         }
+        enemyGroupIndex++;
+    }
+    private void StartSpawning(int _waveNumber)
+    {
+        waveNumber = _waveNumber;
+        enemyGroupIndex = 0;
+        spawning = true;
     }
     [Serializable]
-    public class SpawnedEnemyData
+    public class EnemyGroups
     {
         public GameObject enemyPrefab;
         public int amount;
     }
+    [Serializable]
+    public class Waves
+    {
+        [HideInInspector]
+        public string name = "Wave";
+        public List<EnemyGroups> enemyGroups;
+    }
+
+    
 }
 

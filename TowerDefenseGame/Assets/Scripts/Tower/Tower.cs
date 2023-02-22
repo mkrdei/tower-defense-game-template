@@ -27,7 +27,7 @@ public class Tower : MonoBehaviour
         targetDetector = GetComponentInChildren<TargetDetector>();
         launcher = transform.Find("Launcher");
         rangeCollider = transform.Find("Range").GetComponent<SphereCollider>();
-        rangeCollider.radius = range;
+        
     }
     void Start()
     {
@@ -36,6 +36,7 @@ public class Tower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rangeCollider.radius = range;
         Shoot();
     }
 

@@ -53,6 +53,7 @@ public class TowerArea : MonoBehaviour
         {
             currentTower = Instantiate(tower,transform).GetComponent<Tower>();
             towerType = currentTower.tag;
+            EconomyManager.instance.SpendMoney(100);
         }
         else
         {
@@ -82,17 +83,32 @@ public class TowerArea : MonoBehaviour
         Tower tower = GetComponentInChildren<Tower>();
         if (tower != null)
             tower.damage += tower.towerProfile.damageIncreaseAmount;
+        EconomyManager.instance.SpendMoney(30);
     }
     public void DivideFireCooldown()
     {
         Tower tower = GetComponentInChildren<Tower>();
         if (tower != null)
             tower.cooldown /= tower.towerProfile.fireCooldownDivisionAmount;
+        EconomyManager.instance.SpendMoney(40);
     }
     public void IncreaseRange()
     {
         Tower tower = GetComponentInChildren<Tower>();
         if (tower != null)
             tower.range += tower.towerProfile.rangeIncreaseAmount;
+        EconomyManager.instance.SpendMoney(80);
+    }
+    public void DestroyTower()
+    {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+        {
+            Destroy(tower.gameObject);
+            uIController.HideOnSelectMenus();
+            towerType = "NoTower";
+            EconomyManager.instance.GainMoney(50);
+        }
+            
     }
 }

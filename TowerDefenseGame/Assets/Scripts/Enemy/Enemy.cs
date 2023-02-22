@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Profiles;
+using Managers;
 public class Enemy : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
@@ -28,7 +29,14 @@ public class Enemy : MonoBehaviour
         
         navMeshAgent.speed = enemyProfile.speed;
         if (health <= 0)
+        {
+            if (enemyProfile.name == "Enemy1")
+                EconomyManager.instance.GainMoney(50);
+            else if (enemyProfile.name == "Enemy2")
+                EconomyManager.instance.GainMoney(100);
             Destroy(gameObject);
+        }
+            
     }
     private void OnTriggerEnter(Collider other) 
     {
