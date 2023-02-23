@@ -1,10 +1,12 @@
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 namespace Managers
 {
     public class InputManager : MonoBehaviour
     {
+        public static event Action notInteractedEvent;
         public static event Action<Transform> onSelectEvent;
         public static event Action<Transform> onHoldEvent;
         private Transform raycastedObjectTransform;
@@ -30,25 +32,33 @@ namespace Managers
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                
-                if (Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("Interactable")) && !EventSystem.current.IsPointerOverGameObject()) 
+                if (!IsPointerOverUIObject())
                 {
-                    if (raycastedObjectTransform == hit.transform)
+                    if (Physics.Raycast(ray, out hit, 1000, LayerMask.GetMask("Interactable"))) 
                     {
-                        raycastDuration += Time.deltaTime;    
+                        if (raycastedObjectTransform == hit.transform)
+                        {
+                            raycastDuration += Time.deltaTime;    
+                        }
+                        else
+                        {
+                            raycastedObjectTransform = hit.transform;
+                            Debug.Log("Selected " + raycastedObjectTransform.name);
+                            onSelectEvent?.Invoke(raycastedObjectTransform);
+                        }
+                        if (raycastDuration == holdDuration)
+                        {
+                            Debug.Log("Hold " + raycastedObjectTransform.name);
+                            onHoldEvent?.Invoke(raycastedObjectTransform);
+                        }
                     }
                     else
-                    {
-                        raycastedObjectTransform = hit.transform;
-                        Debug.Log("Selected " + raycastedObjectTransform.name);
-                        onSelectEvent?.Invoke(raycastedObjectTransform);
-                    }
-                    if (raycastDuration == holdDuration)
-                    {
-                        Debug.Log("Hold " + raycastedObjectTransform.name);
-                        onHoldEvent?.Invoke(raycastedObjectTransform);
+                    { 
+                        notInteractedEvent?.Invoke();
                     }
                 }
+                
+            
             }
             else
             {
@@ -56,5 +66,14 @@ namespace Managers
                 raycastedObjectTransform = null;
             }
         }
+         private bool IsPointerOverUIObject() 
+         {
+            PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+            eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+            return results.Count > 0;
+        }
     }
+    
 }

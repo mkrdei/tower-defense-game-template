@@ -49,9 +49,11 @@ namespace UI
         }
         private void OnEnable() 
         {
+            InputManager.notInteractedEvent += HideOnSelectMenus;
         }
         private void OnDisable() 
         {
+            InputManager.notInteractedEvent -= HideOnSelectMenus;
         }
         private void CreateOnSelectMenuItems(int onSelectMenuIndex, GameObject onSelectMenu, UnityEvent[] functions)
         {

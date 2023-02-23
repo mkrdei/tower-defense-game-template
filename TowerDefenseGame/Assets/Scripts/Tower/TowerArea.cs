@@ -44,7 +44,7 @@ public class TowerArea : MonoBehaviour
     }
     private void OnDisable() 
     {
-        
+        InputManager.onSelectEvent -= OnSelect;
     }
     public void BuildTower(GameObject tower)
     {

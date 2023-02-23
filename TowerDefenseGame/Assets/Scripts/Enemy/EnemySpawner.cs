@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void OnDisable() 
     {
-        
+        WaveManager.waveStartedEvent -= StartSpawning;
     }
     
     private void SpawnWaveEnemyGroups()

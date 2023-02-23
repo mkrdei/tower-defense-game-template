@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Profiles;
+using Managers;
 public class Tower : MonoBehaviour
 {
     public TowerProfile towerProfile;
@@ -20,6 +21,7 @@ public class Tower : MonoBehaviour
     private Transform target;
     private Transform launcher;
     private SphereCollider rangeCollider;
+    private bool shootingPermission;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +29,7 @@ public class Tower : MonoBehaviour
         targetDetector = GetComponentInChildren<TargetDetector>();
         launcher = transform.Find("Launcher");
         rangeCollider = transform.Find("Range").GetComponent<SphereCollider>();
-        
+        shootingPermission = true;
     }
     void Start()
     {
@@ -39,11 +41,19 @@ public class Tower : MonoBehaviour
         rangeCollider.radius = range;
         Shoot();
     }
+    private void OnEnable() 
+    {
+        GameManager.gameOverEvent += StopShooting;    
+    }
+    private void OnDisable() 
+    {
+        GameManager.gameOverEvent -= StopShooting;    
+    }
 
     private void Shoot()
     {
         target = targetDetector.target;
-        if (target != null)
+        if (target != null && shootingPermission)
         {
             if (Time.time >= cooldownTimestamp)
             {
@@ -55,6 +65,10 @@ public class Tower : MonoBehaviour
                 Destroy(projectile, 2);
             }
         }
+    }
+    private void StopShooting()
+    {
+        shootingPermission = false;
     }
     
 }
